@@ -18,11 +18,7 @@ class AddProduct extends StatefulWidget {
 class _AddProductState extends State<AddProduct> {
   TextEditingController Product_name = TextEditingController();
   TextEditingController Product_description = TextEditingController();
-  TextEditingController Product_mrp = TextEditingController();
   TextEditingController Product_price = TextEditingController();
-  TextEditingController product_discount = TextEditingController();
-  TextEditingController Product_brand = TextEditingController();
-  TextEditingController Product_color = TextEditingController();
   String? selectImage;
 
   @override
@@ -30,11 +26,7 @@ class _AddProductState extends State<AddProduct> {
     if (widget.documentId != null) {
       Product_name.text = widget.userData['Product_name'];
       Product_description.text = widget.userData['Product_description'];
-      Product_mrp.text = widget.userData['Product mrp'].toString();
       Product_price.text = widget.userData['Product price'].toString();
-      product_discount.text = widget.userData['Product price'].toString();
-      Product_brand.text = widget.userData['Product_brand'];
-      Product_color.text = widget.userData['Product_color'].toString();
     }
     super.initState();
   }
@@ -219,18 +211,6 @@ class _AddProductState extends State<AddProduct> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Product_mrp :",
-                      style: TextStyle(fontFamily: "EduTASBeginner"),
-                    ),
-                  ],
-                ),
-                TextFormField(
-                  controller: Product_mrp,
-                ),
-                const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
                       "Product_price",
                       style: TextStyle(fontFamily: "EduTASBeginner"),
                     ),
@@ -238,42 +218,6 @@ class _AddProductState extends State<AddProduct> {
                 ),
                 TextFormField(
                   controller: Product_price,
-                ),
-                const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "product_discount",
-                      style: TextStyle(fontFamily: "EduTASBeginner"),
-                    ),
-                  ],
-                ),
-                TextFormField(
-                  controller: product_discount,
-                ),
-                const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Product_brand :",
-                      style: TextStyle(fontFamily: "EduTASBeginner"),
-                    ),
-                  ],
-                ),
-                TextFormField(
-                  controller: Product_color,
-                ),
-                const Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Product_color :",
-                      style: TextStyle(fontFamily: "EduTASBeginner"),
-                    ),
-                  ],
-                ),
-                TextFormField(
-                  controller: Product_brand,
                 ),
                 ElevatedButton(
                   onPressed: () async {
@@ -314,13 +258,8 @@ class _AddProductState extends State<AddProduct> {
                               .update({
                             "Product_name": Product_name.text,
                             "Product_description": Product_description.text,
-                            "Product_mrp": int.parse(Product_mrp.text),
                             "image": imageUrl,
                             "Product_price": int.parse(Product_price.text),
-                            "product_discount":
-                            int.parse(product_discount.text),
-                            "Product_brand": Product_brand.text,
-                            "Product_color": Product_color.text,
                           }).whenComplete(() {
                             Navigator.pop(context);
 
@@ -337,11 +276,7 @@ class _AddProductState extends State<AddProduct> {
                             .update({
                           "Product_name": Product_name.text,
                           "Product_description": Product_description.text,
-                          "Product_mrp": int.parse(Product_mrp.text),
                           "Product_price": int.parse(Product_price.text),
-                          "product_discount": int.parse(product_discount.text),
-                          "Product_brand": Product_brand.text,
-                          "Product_color": Product_color.text,
                         }).whenComplete(() {
                           Navigator.pop(context);
 
@@ -380,13 +315,8 @@ class _AddProductState extends State<AddProduct> {
                               .set({
                             "Product_name": Product_name.text,
                             "Product_description": Product_description.text,
-                            "Product_mrp": int.parse(Product_mrp.text),
                             "image": imageUrl,
                             "Product_price": int.parse(Product_price.text),
-                            "product_discount":
-                            int.parse(product_discount.text),
-                            "Product_brand": Product_brand.text,
-                            "Product_color": Product_color.text,
                           }).whenComplete(() {
                             Navigator.pop(context);
 
