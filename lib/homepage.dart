@@ -1,5 +1,5 @@
+import 'package:add/shop.dart';
 import 'package:flutter/material.dart';
-import 'package:m_project/shop.dart';
 
 class HomePageExample extends StatefulWidget {
   const HomePageExample({Key? key}) : super(key: key);
